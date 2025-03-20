@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main(){
+    int x, original, reversed =0, remainder;
+
+    printf("Enter a number\n");
+    scanf("%d", &x);
+
+    if(x<0){
+        printf("False");
+
+        return 0;
+    }
+
+    original = x;
+
+    while(x >0){
+        remainder= x % 10;
+
+        reversed= reversed *10 + remainder;
+
+        x /= 10;
+    }
+
+    if(original == reversed){
+        printf("True");
+    }
+    else{
+        printf("False");
+    }
+    return 0;
+}
