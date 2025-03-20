@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int x, reversed = 0;
+
+    printf("Enter an integer: ");
+    scanf("%d", &x);
+
+    while (x != 0) {
+        int digit = x % 10;
+        int temp = reversed * 10 + digit;
+
+        if ((temp - digit) / 10 != reversed) {
+            printf("0\n");
+            return 0;
+        }
+
+        reversed = temp;
+        x /= 10;
+    }
+
+    printf("%d\n", reversed);
+    return 0;
+}
